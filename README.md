@@ -1,70 +1,57 @@
 # Future Value Investment Calculator
-This is a Python project that I made to leverage my knowledge in Python and Finance. It calculates and visualise the future vlaue of different investment strategies.
 
-It compares:
-- End-of-year recurring contributions
-- An initial lump sum plus yearly contributions
+A small Python project that compares the projected future value of three investment strategies:
+
+- Regular end-of-year contributions
+- An initial lump sum plus end-of-year contributions
 - An initial lump sum plus monthly contributions
 
-It was built as a practical exercise in applying finance formulas with Python, orgnising my codes into modules and exploring Matplotlib as this is my first time using it so I had to read alot of documentation and assistance from coding agents
-
-## Features
-- Calculates the future value of an ordinary annuity
-- Calculates the future value of a lump sum plus recurring payments
-- Supports annual and monthly contribution scenarios
-- Handles a 0% rate in annuity calculation
-- Prints resutls as a currency to two decimal places
-- Plots growth over time
-
-## Project structure
-future-value-calculator/
-├── main.py
-├── investment_formulas.py
-├── visualisation.py
-├── requirements.txt
-└── README.md
-
-### File responsibilities
-- main.py contains the investment assumptions, runs the entire calculations, prints results and prepares the chart
-- investment_formulas.py contains the future-value calculation functions
-- visualtion.py containss the Matplotlib chart functions
+It prints the final values and displays a chart of each strategy's growth over time.
 
 ## Requirements
-- Python3
-- Numpy
+
+- Python 3
+- NumPy
 - Matplotlib
 
-## Running the Project
-1. Clone or download this repository.
-2. Open a terminal in the project directory.
-3. Install the requirements.
-4. Run: comman prompt -> python main.py
+## Setup and run
 
-## Changing the Inputs
-Edit these values inside main.py
+From the project directory, install the dependencies and run the calculator:
 
+```powershell
+py -m pip install -r requirements.txt
+py main.py
+```
+
+On systems where the Python command is `python` rather than `py`, use:
+
+```shell
+python -m pip install -r requirements.txt
+python main.py
+```
+
+## Customize the example
+
+Edit the assumptions near the top of `main.py`:
+
+```python
 initial_lump = 1000
 annual_payment = 135
 monthly_payment = 135
 annual_rate = 0.10
 compounding_period_per_year = 12
 investment_years = 10
+```
 
-## Skills Demonstrated
-- Translating financial formulas into Python
-- Writing usable functions
-- Organising codes into modules
-- Importing functions between files
-- Working with Numpy arrays and list comprehensions
-- Creating and formatting Matplotlib visualisations
-- Input validations and currency formatting
+The calculator assumes contributions are made at the end of each period. The monthly scenario divides the annual rate by the number of compounding periods per year.
 
-# Possible improvements
-Additional features such as accepting user inputs from the command line or a floating text box could improve the userability of the program. 
+## Project files
 
-Adjusting results for inflation would make the growth estimates more accurate. 
+- `main.py` sets the example assumptions, calculates and prints results, and prepares the chart.
+- `investment_formulas.py` contains the future-value calculation functions.
+- `visualisation.py` plots the investment growth scenarios.
+- `requirements.txt` lists the Python packages required to run the project.
 
-Build a graphical or web-based interface
+## Disclaimer
 
-# Disclaimer
-This calculator was created for educational purposes. Its results are simplified projections and should not be treated as investment advice or a guarantee of future returns.
+This calculator is for educational purposes only. Its results are simplified projections, not investment advice or a guarantee of future returns.
